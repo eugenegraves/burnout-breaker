@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import Header from './Header';
 
-function Therapy() {
+function Therapy({ setCurrentPage }) {
   // All hooks need to be at the top level and in the same order every render
   const canvasRef = useRef(null);
   const sceneRef = useRef(null);
@@ -314,50 +314,17 @@ function Therapy() {
     });
   };
   
-  // Button spark effect
-  const createSparkBurst = () => {
-    if (!buttonRef.current) return;
-    
-    // Create spark element
-    const createSpark = () => {
-      const spark = document.createElement('div');
-      spark.className = 'spark';
-      spark.style.left = `${Math.random() * 100}%`;
-      spark.style.top = `${Math.random() * 100}%`;
-      const size = 3 + Math.random() * 6;
-      spark.style.width = `${size}px`;
-      spark.style.height = `${size}px`;
-      buttonRef.current.appendChild(spark);
-      
-      // Animate spark
-      gsap.to(spark, {
-        x: (Math.random() - 0.5) * 100,
-        y: (Math.random() - 0.5) * 100,
-        opacity: 0,
-        scale: 0,
-        duration: 0.8,
-        ease: "power1.out",
-        onComplete: () => {
-          if (spark.parentNode) {
-            spark.parentNode.removeChild(spark);
-          }
-        }
-      });
-    };
-    
-    // Create multiple sparks
+  // Update button click handler to navigate to coaching
+  const handleButtonClick = (e) => {
+    // Create sparks effect
     for (let i = 0; i < 20; i++) {
-      setTimeout(createSpark, i * 20);
+      createSpark(e);
     }
     
-    // Add button animation
-    gsap.to(buttonRef.current, {
-      scale: 1.1,
-      boxShadow: "0 0 20px rgba(255, 77, 77, 0.8)",
-      duration: 0.3,
-      yoyo: true,
-      repeat: 1
-    });
+    // Navigate to coaching page
+    setTimeout(() => {
+      setCurrentPage('coaching');
+    }, 800);
   };
   
   return (
@@ -397,9 +364,9 @@ function Therapy() {
             <button 
               ref={buttonRef} 
               className="book-button"
-              onClick={createSparkBurst}
+              onClick={handleButtonClick}
             >
-              Book Now
+              Book a Session
             </button>
           </div>
         </div>

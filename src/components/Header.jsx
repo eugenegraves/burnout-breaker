@@ -1,25 +1,30 @@
 import { useState } from 'react';
 
-function Header() {
+function Header({ setCurrentPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
+    setIsMenuOpen(false); // Close menu after click on mobile
+  };
+
   return (
     <header>
       <div className="logo">
-        <h1>BurnoutBreaker</h1>
+        <h1 onClick={() => handleNavClick('home')} style={{ cursor: 'pointer' }}>BurnoutBreaker</h1>
       </div>
       
       <nav className={isMenuOpen ? 'active' : ''}>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Therapy</a></li>
-          <li><a href="#">Coaching</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Resources</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}>Home</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('therapy'); }}>Therapy</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('coaching'); }}>Coaching</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('community'); }}>Community</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('resources'); }}>Resources</a></li>
         </ul>
       </nav>
       

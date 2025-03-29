@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 
 // Card component for the features section
-const Card = ({ title, delay }) => {
+const Card = ({ title, delay, setCurrentPage }) => {
   const cardRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   
@@ -33,6 +33,17 @@ const Card = ({ title, delay }) => {
     }
   }, [hovered]);
 
+  // Map feature cards to the correct pages
+  const handleNavigation = () => {
+    if (title === "Expert Therapy") {
+      setCurrentPage('therapy');
+    } else if (title === "Focused Coaching") {
+      setCurrentPage('coaching');
+    } else if (title === "Founder Community") {
+      setCurrentPage('community');
+    }
+  };
+
   return (
     <div 
       className="feature-card" 
@@ -42,12 +53,12 @@ const Card = ({ title, delay }) => {
     >
       <h3>{title}</h3>
       <p>Transform your relationship with stress and reclaim your passion.</p>
-      <button>Learn More</button>
+      <button onClick={handleNavigation}>Learn More</button>
     </div>
   );
 };
 
-function Landing() {
+function Landing({ setCurrentPage }) {
   const canvasRef = useRef(null);
   const headlineRef = useRef(null);
   const subheadRef = useRef(null);
@@ -333,21 +344,22 @@ function Landing() {
   
   return (
     <div className="landing">
-      <div className="hero">
-        <canvas ref={canvasRef} className="hero-canvas" />
-        
+      <section className="hero">
+        <canvas ref={canvasRef} className="hero-canvas"></canvas>
         <div className="hero-content">
           <h1 ref={headlineRef}>Break Your Burnout</h1>
-          <h2 ref={subheadRef}>Reclaim Your Founder Fire</h2>
-          <button ref={buttonRef} className="cta-button">Join Now</button>
+          <h2 ref={subheadRef}>Tools for Founders on the Edge</h2>
+          <button ref={buttonRef} className="cta-button" onClick={() => setCurrentPage('therapy')}>
+            Start Recovery
+          </button>
         </div>
-      </div>
+      </section>
       
-      <div className="features">
-        <Card title="1-on-1 Therapy" delay={2.2} />
-        <Card title="Peer Support" delay={2.4} />
-        <Card title="Content Library" delay={2.6} />
-      </div>
+      <section className="features">
+        <Card title="Expert Therapy" delay={2.2} setCurrentPage={setCurrentPage} />
+        <Card title="Focused Coaching" delay={2.4} setCurrentPage={setCurrentPage} />
+        <Card title="Founder Community" delay={2.6} setCurrentPage={setCurrentPage} />
+      </section>
     </div>
   );
 }

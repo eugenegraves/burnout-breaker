@@ -435,6 +435,442 @@ nav ul li a:hover::after {
   font-size: 1.3rem;
 }
 
+/* Coaching Component Styles */
+.coaching-page {
+  min-height: 100vh;
+}
+
+.coaching-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wheel-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.coaching-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.coaching-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.coaching-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+  margin: 0;
+}
+
+.start-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+  margin-top: 1rem;
+}
+
+.start-button:hover {
+  background-color: #ff3333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 77, 77, 0.5);
+}
+
+.benefits-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.benefits-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.benefits-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.coaching-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.coaching-card {
+  background: linear-gradient(145deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.7));
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  min-height: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border: 1px solid rgba(255, 77, 77, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.coaching-card:hover {
+  border-color: rgba(255, 77, 77, 0.3);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.coaching-card h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.coaching-card p {
+  flex-grow: 1;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.card-icon {
+  margin-top: auto;
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.method-section {
+  padding: 4rem 0 6rem;
+  text-align: center;
+}
+
+.method-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.method-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  background: rgba(26, 26, 46, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 3px solid var(--accent-color);
+  text-align: left;
+}
+
+.step-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255, 77, 77, 0.15);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: -1;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.step p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Community Component Styles */
+.community-page {
+  min-height: 100vh;
+}
+
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.community-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.community-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.community-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+  margin: 0;
+  letter-spacing: -1px;
+  perspective: 1000px;
+}
+
+.community-content h1 span {
+  display: inline-block;
+}
+
+.community-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.tribe-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+  margin-top: 1rem;
+}
+
+.tribe-button:hover {
+  background-color: #ff3333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 77, 77, 0.5);
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.groups-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.groups-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.groups-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.group-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.group-card {
+  background: linear-gradient(145deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.7));
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  min-height: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border: 1px solid rgba(255, 77, 77, 0.1);
+  position: relative;
+}
+
+.group-card:hover {
+  border-color: rgba(255, 77, 77, 0.3);
+}
+
+.group-card .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.group-card h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.group-card p {
+  flex-grow: 1;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.group-card .card-icon {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.testimonials {
+  padding: 4rem 0 6rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.testimonials h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+blockquote {
+  background: rgba(26, 26, 46, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  text-align: left;
+  border-left: 3px solid var(--accent-color);
+  font-style: italic;
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  font-family: serif;
+  color: rgba(255, 77, 77, 0.2);
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  text-align: right;
+  color: var(--accent-color);
+}
+
 main {
   flex: 1;
   padding: 0;
@@ -483,15 +919,19 @@ button:focus {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-  .hero-content h1 {
-    font-size: 3rem;
+  .hero-content h1, .coaching-content h1, .community-content h1 {
+    font-size: 3.5rem;
   }
   
-  .hero-content h2 {
+  .hero-content h2, .coaching-content h2, .community-content h2 {
     font-size: 1.5rem;
   }
   
   .therapy-title {
+    font-size: 2rem;
+  }
+  
+  .benefits-section h2, .method-section h2, .groups-section h2, .testimonials h2 {
     font-size: 2rem;
   }
 }
@@ -522,15 +962,15 @@ button:focus {
     z-index: 20;
   }
   
-  .hero-content h1 {
+  .hero-content h1, .coaching-content h1, .community-content h1 {
     font-size: 2.5rem;
   }
   
-  .hero-content h2 {
+  .hero-content h2, .coaching-content h2, .community-content h2 {
     font-size: 1.2rem;
   }
   
-  .cta-button {
+  .cta-button, .start-button, .tribe-button {
     padding: 0.8rem 2rem;
     font-size: 1rem;
   }
@@ -554,10 +994,24 @@ button:focus {
   .focus-list {
     width: 100%;
   }
+  
+  .coaching-cards, .group-cards, .testimonial-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .method-steps {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
+  .hero-content h1, .coaching-content h1, .community-content h1 {
     font-size: 2rem;
   }
   
@@ -573,7 +1027,284 @@ button:focus {
     font-size: 1.8rem;
   }
   
-  .therapy-container {
+  .therapy-container, .coaching-container, .community-container {
     padding: 0 1rem;
+  }
+  
+  .benefits-section, .method-section, .groups-section, .testimonials {
+    padding: 3rem 0;
+  }
+  
+  .benefits-section h2, .method-section h2, .groups-section h2, .testimonials h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Resources Component Styles */
+.resources-page {
+  min-height: 100vh;
+}
+
+.resources-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.resources-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.resources-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.resources-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
+  margin: 0;
+}
+
+.dive-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+  margin-top: 1rem;
+}
+
+.dive-button:hover {
+  background-color: #ff3333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 77, 77, 0.5);
+}
+
+.spark-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spark {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: 0;
+  transform-origin: bottom center;
+  animation: spark-rise 2s ease-out infinite;
+}
+
+@keyframes spark-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
+
+.button-fragment {
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shatter-container {
+  z-index: 1000;
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.resources-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.resources-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.resources-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.resource-card {
+  background: linear-gradient(145deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.7));
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  min-height: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border: 1px solid rgba(255, 77, 77, 0.1);
+  position: relative;
+}
+
+.resource-card:hover {
+  border-color: rgba(255, 77, 77, 0.3);
+}
+
+.resource-card .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.resource-card h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.resource-card p {
+  flex-grow: 1;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.resource-button {
+  align-self: center;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.resource-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+}
+
+/* Update responsive styles to include resources */
+@media (max-width: 992px) {
+  .hero-content h1, .coaching-content h1, .community-content h1, .resources-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content h2, .coaching-content h2, .community-content h2, .resources-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .benefits-section h2, .method-section h2, .groups-section h2, .testimonials h2, .resources-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1, .coaching-content h1, .community-content h1, .resources-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2, .coaching-content h2, .community-content h2, .resources-content h2 {
+    font-size: 1.2rem;
+  }
+  
+  .cta-button, .start-button, .tribe-button, .dive-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .coaching-cards, .group-cards, .testimonial-container, .resource-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1, .coaching-content h1, .community-content h1, .resources-content h1 {
+    font-size: 2rem;
+  }
+  
+  .therapy-container, .coaching-container, .community-container, .resources-container {
+    padding: 0 1rem;
+  }
+  
+  .benefits-section, .method-section, .groups-section, .testimonials, .resources-section {
+    padding: 3rem 0;
+  }
+  
+  .benefits-section h2, .method-section h2, .groups-section h2, .testimonials h2, .resources-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
   }
 }
